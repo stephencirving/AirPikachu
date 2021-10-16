@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.7', '>= 5.0.7.2'
 gem 'sqlite3', '~> 1.3.13'
 gem 'puma', '~> 3.0'
@@ -19,7 +18,6 @@ gem 'jbuilder', '~> 2.5'
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
 
@@ -33,3 +31,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise', '~> 4.2'
+gem 'bcrypt', '~> 3.1.7'
