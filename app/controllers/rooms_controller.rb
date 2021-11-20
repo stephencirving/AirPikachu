@@ -1,4 +1,4 @@
-class RoomsController < ApplicationController
+ class RoomsController < ApplicationController
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
 
@@ -15,7 +15,8 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to listing_room_path(@room), notice: "Saved..."
     else
-      render :new, notice: "Something went wrong..."
+      flash[:alert] = "Something went wrong..."
+      render :new
     end
   end
 
@@ -44,7 +45,7 @@ class RoomsController < ApplicationController
     if @room.update(room_params)
       flash[:notice] = "Saved..."
     else
-      flash[:notice] = "Something went wrong..."
+      flash[:alert] = "Something went wrong..."
     end
     redirect_back(fallback_location: request.referer)
   end
