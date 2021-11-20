@@ -21,10 +21,10 @@ a {
 }
 
 .text-red, .icon-red {
-  color: #FF545F;
+  color: #FF5A5F;
 }
 
-// NAVBAR
+// NAVBARS
 .navbar-default {
   background-color: #FFFFFF;
 }
@@ -35,7 +35,7 @@ a {
   font-weight: 400;
 }
 
-//BUTTONS
+// BUTTONS
 .btn-block {
   display: block;
   white-space: normal;
@@ -91,8 +91,8 @@ a {
 }
 
 .btn.btn-facebook {
-  border: 1px solid #385998;
-  background-color: #385998;
+  border: 1px solid #3B5998;
+  background-color: #3B5998;
 }
 
 .btn.btn-facebook:active {
@@ -101,12 +101,12 @@ a {
   background-color: #2d467b;
 }
 
-//PANELS
+// PANELS
 .panel-default .panel-heading {
-   color: #ffffff;
-   background-color: #00A699;
-   font-size: 18px;
-   font-weight: 400;
+  color: #ffffff;
+  background-color: #00A699;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .row-space-1 {
@@ -199,8 +199,8 @@ a {
   border: 1px solid #00A699;
   border-radius: 2px;
   appearance: none;
-  -moz-appearance: none;  /* Firefox */
-  -webkit-appearance: none; /* Safari & Chrome */
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 .form-group input[type="checkbox"]:checked:before {
@@ -234,8 +234,8 @@ a {
   text-decoration: none;
 }
 
-active.sidebar-link {
-  color: #565A5c;
+.active.sidebar-link {
+  color: #565A5C;
   font-weight: bold;
   text-decoration: none;
 }
@@ -246,7 +246,7 @@ active.sidebar-link {
   overflow: hidden;
 }
 
-.btn-file input [type=file] {
+.btn-file input[type=file] {
   position: absolute;
   top: 0;
   right: 0;
