@@ -32,7 +32,7 @@ class RoomControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get photo" do
-    get room_photo_url
+    get room_photo_upload_url
     assert_response :success
   end
 
