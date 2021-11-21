@@ -14,3 +14,4 @@ Planned Updates:
 1. rails -> update to newest version
 2. paperclip -> change to activestorage
 3. fontawesome -> switch from link in head to gem
+4. Upgrade photo storage to AWS -> when verified
