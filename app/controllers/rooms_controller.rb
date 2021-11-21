@@ -34,7 +34,7 @@
   end
 
   def photo_upload
-    @photos =@room.photos
+    @photos = @room.photos
   end
 
   def amenities
@@ -44,7 +44,7 @@
   end
 
   def update
-    if @room.update(room_params)
+    if @room.update(new_params)
       flash[:notice] = "Saved..."
     else
       flash[:alert] = "Something went wrong..."
@@ -52,7 +52,6 @@
     redirect_back(fallback_location: request.referer)
   end
 
-  private
   def set_room
     @room = Room.find(params[:id])
   end
@@ -62,7 +61,6 @@
   end
 
   def room_params
-      params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+    params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
   end
-
 end
