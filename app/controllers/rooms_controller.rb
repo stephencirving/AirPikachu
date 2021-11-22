@@ -44,6 +44,10 @@
   end
 
   def update
+
+    new_params = room_params
+    new_params = room_params.merge(active: true) if is_ready_room
+
     if @room.update(new_params)
       flash[:notice] = "Saved..."
     else
@@ -58,6 +62,10 @@
 
   def is_authorised
     redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user.id
+  end
+
+  def is_ready_room
+    !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
   end
 
   def room_params
