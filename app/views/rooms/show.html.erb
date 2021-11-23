@@ -1,0 +1,122 @@
+<!-- Image -->
+<div class="row">
+  <div class="col-md-12">
+    <%= image_tag @room.cover_photo(nil), width: "100%" %>
+  </div>
+<br/>
+
+<div class="row">
+
+  <!-- LEFT PANEL -->
+  <div class="col-md-8">
+
+    <!-- Listing Name -->
+    <div class="row">
+      <div class="col-md-8">
+        <h1><%= @room.listing_name %></h1>
+        <%= @room.address %>
+      </div>
+      <div class="col-md-4 text-center">
+        <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %><br/><br/>
+        <%= @room.user.fullname %>
+      </div>
+    </div>
+    <hr/>
+
+    <!-- Room Info -->
+    <div class="row text-babu">
+      <div class="row text-center row-space-1">
+        <div class="col-md-3">
+          <i class="fa fa-home fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-user-circle-o fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bed fa-2x"></i>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-bath fa-2x"></i>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-3"><%= @room.home_type %></div>
+        <div class="col-md-3"><%= pluralize(@room.accommodate, "Guest") %></div>
+        <div class="col-md-3"><%= pluralize(@room.bed_room, "Bedroom") %></div>
+        <div class="col-md-3"><%= pluralize(@room.bath_room, "Bathroom") %></div>
+      </div>
+
+    </div>
+    <hr/>
+
+    <!-- About -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3> About This Listing</h3>
+        <p><%= @room.summary %></p>
+      </div>
+    </div>
+    <hr/>
+
+    <!-- Amenities -->
+    <div class="row">
+      <div class="col-md-3">
+        <h4>Amenities</h4>
+      </div>
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
+              <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="amenities">
+              <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
+              <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <hr/>
+
+    <!-- Carousel -->
+    <div class="row">
+
+    </div>
+    <hr/>
+
+    <!-- REVIEWS -->
+    <div class="row">
+
+    </div>
+    <hr/>
+
+
+    <!-- GOOGLE MAP -->
+    <div class="row">
+
+    </div>
+    <hr/>
+
+    <!-- NEAR BY ROOM -->
+    <div class="row">
+
+    </div>
+    <hr/>
+
+
+  </div>
+
+
+  <!-- RIGHT PANEL -->
+  <div class="col-md-4">
+    <!-- Reservation form -->
+  </div>
+</div>
