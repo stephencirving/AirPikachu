@@ -56,6 +56,7 @@
     redirect_back(fallback_location: request.referer)
   end
 
+private
   def set_room
     @room = Room.find(params[:id])
   end
