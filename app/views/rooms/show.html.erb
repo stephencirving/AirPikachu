@@ -3,6 +3,7 @@
   <div class="col-md-12">
     <%= image_tag @room.cover_photo(nil), width: "100%" %>
   </div>
+</div>
 <br/>
 
 <div class="row">
@@ -80,9 +81,10 @@
               <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
             </ul>
           </div>
-        </div>
 
+        </div>
       </div>
+
     </div>
     <hr/>
 
@@ -91,7 +93,6 @@
 
       <% if @photos.length > 0 %>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <% @photos.each do |photo| %>
@@ -133,6 +134,32 @@
     <!-- GOOGLE MAP -->
     <div class="row">
 
+      <div id="map" style="width: 100%; height: 400px"></div>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAfWdOAXiapGQsWjWcNSkBf_0D85WlzNA&callback=initMap"></script>
+      <script>
+          function initialize() {
+            var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 14
+            });
+
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
+            });
+
+            var infoWindow = new google.maps.InfoWindow({
+              content: '<div id="content"><%= image_tag @room.cover_photo(:medium) %></div>'
+            });
+
+            infoWindow.open(map, marker);
+          }
+
+          google.maps.event.addDomListener(window, 'load', initialize);
+      </script>
+
     </div>
     <hr/>
 
@@ -140,8 +167,6 @@
     <div class="row">
 
     </div>
-    <hr/>
-
 
   </div>
 
