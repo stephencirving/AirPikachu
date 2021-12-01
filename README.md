@@ -15,3 +15,4 @@ Planned Updates:
 2. paperclip -> change to activestorage
 3. fontawesome -> switch from link in head to gem
 4. Upgrade photo storage to AWS -> when verified
+5. Change hot-sneaks to redmund with datepicker -> code.jquery.com/
