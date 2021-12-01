@@ -41,3 +41,4 @@ gem 'climate_control'
 gem 'cocaine'
 
 gem 'geocoder', '~> 1.4'
+gem 'jquery-ui-rails', '~> 5.0'
