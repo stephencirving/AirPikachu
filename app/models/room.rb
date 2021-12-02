@@ -3,6 +3,8 @@ class Room < ApplicationRecord
   has_many :photos
   has_many :reservations
 
+  has_many :guest_reviews
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
@@ -19,4 +21,9 @@ class Room < ApplicationRecord
       "blank.jpg"
     end
   end
+
+  def average_rating
+    guest_review.count == 0 ? 0 : guest_reviews.average(:star).round(2).to_i
+  end
+
 end
