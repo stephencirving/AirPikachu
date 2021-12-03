@@ -12,20 +12,21 @@
         Listings
       </div>
       <div class="panel-body">
+
         <% @rooms.each do |room| %>
           <div class="row">
             <div class="col-md-2">
               <%= image_tag room.cover_photo(:thumb) %>
             </div>
-              <div class="col-md-7">
-                <h4><%= room.listing_name %></h4>
-              </div>
-              <div class="col-md-3 right">
-                <%= link_to "Update", listing_room_path(room), class: "btn btn-form" %>
-              </div>
+            <div class="col-md-7">
+              <h4><%= room.listing_name %></h4>
+            </div>
+            <div class="col-md-3 right">
+              <%= link_to "Update", listing_room_path(room), class: "btn btn-form" %>
+            </div>
           </div>
           <hr/>
-        <% end  %>
+        <% end %>
       </div>
     </div>
   </div>
