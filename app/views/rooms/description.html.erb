@@ -11,7 +11,6 @@
 
       <div class="panel-body">
         <div class="container">
-
           <%= form_for @room do |f| %>
 
             <div class="row">
@@ -24,7 +23,7 @@
             <div class="row">
               <div class="form-group">
                 <label>Summary</label>
-                <%= f.text_area :summary, rows: 5, placeholder: "Summary of your house", class: "form-control", require: true %>
+                <%= f.text_area :summary, rows: 5, placeholder: "Summary of your house", class: "form-control", required: true %>
               </div>
             </div>
 
@@ -33,7 +32,6 @@
             </div>
 
           <% end %>
-
         </div>
       </div>
 
