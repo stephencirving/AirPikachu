@@ -3,12 +3,12 @@ class GuestReviewsController < ApplicationController
   def create
     # Step 1: Check if the reservation exist (room_id, host_id, host_id)
 
-    # Step 2: If it exists, then going to check if the current host has already reviewed the guest.
+    # Step 2: Check if the current host already reviewed the guest in this reservation.
 
     @reservation = Reservation.where(
                     id: guest_review_params[:reservation_id],
                     room_id: guest_review_params[:room_id]
-                  ).first
+                   ).first
 
     if !@reservation.nil? && @reservation.room.user.id == guest_review_params[:host_id].to_i
 
@@ -18,14 +18,13 @@ class GuestReviewsController < ApplicationController
                       ).first
 
       if @has_reviewed.nil?
-        #allow to review
-        @guest_review = current_user.guest_review.create(guest_review_params)
-        flash[:success] = "Review created..."
+          # Allow to review
+          @guest_review = current_user.guest_reviews.create(guest_review_params)
+          flash[:success] = "Review created..."
       else
-        #already reviewed
-        flash[:success] = "You already reviewed this Reservation..."
+          # Already reviewed
+          flash[:success] = "You already reviewed this Reservation"
       end
-
     else
       flash[:alert] = "Not found this reservation"
     end
