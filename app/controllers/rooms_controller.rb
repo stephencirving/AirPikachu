@@ -1,4 +1,4 @@
- class RoomsController < ApplicationController
+class RoomsController < ApplicationController
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
@@ -57,44 +57,45 @@
     redirect_back(fallback_location: request.referer)
   end
 
-# --- Reservations ---
-def preload
-  today = Date.today
-  reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
+  # --- Reservations ---
+  def preload
+    today = Date.today
+    reservations = @room.reservations.where("start_date >= ? OR end_date >= ?", today, today)
 
-  render json: reservations
-end
-
-def preview
-  start_date = Date.parse(params[:start_date])
-  end_date = Date.parse(params[:end_date])
-
-  output = {
-    conflict: is_conflict(start_date, end_date, @room)
-  }
-
-  render json: output
-end
-
-private
-  def is_conflict(start_date, end_date, room)
-    check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
-    check.size > 0? true : false
+    render json: reservations
   end
 
-  def set_room
-    @room = Room.find(params[:id])
+  def preview
+    start_date = Date.parse(params[:start_date])
+    end_date = Date.parse(params[:end_date])
+
+    output = {
+      conflict: is_conflict(start_date, end_date, @room)
+    }
+
+    render json: output
   end
 
-  def is_authorised
-    redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user.id
-  end
 
-  def is_ready_room
-    !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
-  end
+  private
+      def is_conflict(start_date, end_date, room)
+        check = room.reservations.where("? < start_date AND end_date < ?", start_date, end_date)
+        check.size > 0? true : false
+      end
 
-  def room_params
-    params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+      def set_room
+        @room = Room.find(params[:id])
+      end
+
+      def is_authorised
+        redirect_to root_path, alert: "You don't have permission" unless current_user.id == @room.user_id
+      end
+
+      def is_ready_room
+        !@room.active && !@room.price.blank? && !@room.listing_name.blank? && !@room.photos.blank? && !@room.address.blank?
+      end
+
+      def room_params
+        params.require(:room).permit(:home_type, :room_type, :accommodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+      end
   end
-end
