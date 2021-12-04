@@ -16,7 +16,7 @@
       <div class="modal-body">
         <%= form_for current_user.guest_reviews.new do |f| %>
             <div class="form-group text-center">
-              <div id="stars"></div>
+              <%= f.text_field :star %>
             </div>
             <div class="form-group">
               <%= f.text_area :comment, rows: 3, class: "form-control" %>
