@@ -53,12 +53,12 @@
 
     <!-- About -->
     <div class="row">
-      <div class="col-md-12">
-        <h3> About This Listing</h3>
-        <p><%= @room.summary %></p>
-      </div>
+    <div class="col-md-12">
+      <h3>About This Listing</h3>
+      <p><%= @room.summary %></p>
     </div>
-    <hr/>
+  </div>
+  <hr/>
 
     <!-- Amenities -->
     <div class="row">
@@ -92,20 +92,20 @@
     <div class="row">
 
       <% if @photos.length > 0 %>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <% @photos.each do |photo| %>
-              <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+                <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
             <% end %>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <% @photos.each do |photo| %>
-              <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                <%= image_tag photo.image.url() %>
-              </div>
+                <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+                  <%= image_tag photo.image.url() %>
+                </div>
             <% end %>
           </div>
 
@@ -182,7 +182,7 @@
     </div>
 
   </div>
-  
+
 
   <!-- RIGHT PANEL -->
   <div class="col-md-4">
