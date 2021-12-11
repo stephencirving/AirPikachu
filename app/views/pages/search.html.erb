@@ -18,6 +18,7 @@
           <div class="row">
             <div class="col-md-8">
               <label>Price range: </label>
+              <div id="slider-range"></div>
             </div>
             <div class="col-md-2">
               <label>Min Price: </label>
@@ -153,8 +154,6 @@
 </div>
 
 
-
-
 <script>
 $('#start_date').datepicker({
   dateFormat: 'dd-mm-yy',
@@ -185,4 +184,23 @@ $('#filter').click(function() {
   }
   open = !open;
 });
+</script>
+
+<script>
+$(function() {
+  $("#q_price_gteq").val('100');
+  $("#q_price_lteq").val('500');
+
+  $("#slider-range").slider({
+    range: true,
+    min: 0,
+    max: 10000,
+    values: [100, 500],
+    slide: function(event, ui) {
+      $("#q_price_gteq").val(ui.values[0]);
+      $("#q_price_lteq").val(ui.values[1]);
+    }
+  });
+
+})
 </script>
