@@ -194,13 +194,17 @@ $(function() {
   $("#slider-range").slider({
     range: true,
     min: 0,
-    max: 10000,
+    max: 1000,
     values: [100, 500],
     slide: function(event, ui) {
       $("#q_price_gteq").val(ui.values[0]);
       $("#q_price_lteq").val(ui.values[1]);
     }
   });
+
+  $(".ui-widget-header").css('background', '#00A699');
+  $(".ui-state-default, .ui-widget-content").css('background', '#white');
+  $(".ui-state-default, .ui-widget-content").css('border-color', '#00A699');
 
 })
 </script>
