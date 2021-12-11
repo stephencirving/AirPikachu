@@ -140,11 +140,19 @@
           zoom: 12
         });
 
+        var marker, inforwindow;
+
         <% @arrRooms.each do |room| %>
-        new google.maps.Marker({
+        marker = new google.maps.Marker({
           position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
           map: map
         });
+
+        inforwindow = new google.maps.InfoWindow({
+          content: "<div class='map_price'>$" + <%= room.price %> + "</div>"
+        });
+
+        inforwindow.open(map, marker);
         <% end %>
       }
 
