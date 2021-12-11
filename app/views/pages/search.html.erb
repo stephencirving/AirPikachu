@@ -117,12 +117,12 @@
     </script>
 
     <script>
-      function initialize() {
+      function initialize(rooms) {
         var location = {lat: 44.5403, lng: -78.5463}
 
-        <% if @arrRooms.length > 0 %>
-          location = {lat: <%= @arrRooms[0].latitude %>, lng: <%= @arrRooms[0].longitude %>}
-        <% end %>
+        if (rooms.length > 0) {
+          location = {lat: rooms[0].latitude, lng: rooms[0].longitude}
+        }
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: location,
@@ -131,21 +131,23 @@
 
         var marker, inforwindow;
 
-        <% @arrRooms.each do |room| %>
-        marker = new google.maps.Marker({
-          position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
-          map: map
-        });
+        rooms.forEach(function(room) {
+          marker = new google.maps.Marker({
+            position: {lat: room.latitude, lng: room.longitude},
+            map: map
+          });
 
-        inforwindow = new google.maps.InfoWindow({
-          content: "<div class='map_price'>$" + <%= room.price %> + "</div>"
-        });
+          inforwindow = new google.maps.InfoWindow({
+            content: "<div class='map_price'>$" + room.price + "</div>"
+          });
 
-        inforwindow.open(map, marker);
-        <% end %>
+          inforwindow.open(map, marker);
+        })
       }
 
-      google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', function() {
+        initialize(<%= raw @arrRooms.to_json %>)
+      });
     </script>
   </div>
 </div>
