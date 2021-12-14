@@ -22,3 +22,4 @@ Planned Updates:
 10. paperclip -> change to activestorage
 11. fontawesome -> switch from link in head to gem
 12. Change hot-sneaks to redmund with datepicker -> code.jquery.com/
+13. Add autocomplete to Navbar
