@@ -1,7 +1,7 @@
 class GuestReviewsController < ApplicationController
 
   def create
-    # Step 1: Check if the reservation exist (room_id, guest_id, host_id)
+    # Step 1: Check if the reservation exist (room_id, host_id, host_id)
 
     # Step 2: Check if the current host already reviewed the guest in this reservation.
 
