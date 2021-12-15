@@ -36,6 +36,8 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
 
+gem 'aws-sdk', '~> 2.8'
+
 gem 'paperclip', '~> 5.1.0'
 gem 'climate_control'
 gem 'cocaine'
