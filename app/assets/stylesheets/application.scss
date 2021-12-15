@@ -176,7 +176,7 @@ a {
   padding: 10px;
   appearance: none;
   -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none;  /* Safari & Chrome */
+  -webkit-appearance: none; /* Safari & Chrome */
 }
 
 .select:before {
@@ -284,7 +284,6 @@ a {
 }
 
 // RESERVATIONS
-
 .reservation-table td {
   width: 100%;
   border: none;
@@ -295,7 +294,7 @@ a {
 .reservation-table .total td {
   font-size: 16px;
   font-weight: bold;
-  border:none;
+  border: none;
 }
 
 .form-control.datepicker {
@@ -345,7 +344,7 @@ a {
   height: 326px;
 }
 
-.banne {
+.banner {
   margin-top: 50px;
   margin-bottom: 50px;
 }
