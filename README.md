@@ -14,7 +14,7 @@ Planned Updates:
 1. Fix the google maps autocomplete
 2. Google maps API -> Configure
 3. Check the reviews section
-4. Navbar -> Fix formattin issue
+4. Navbar -> Fix formatting issue
 5. Upgrade photo storage to AWS -> when verified
 6. Facebook verification -> Amend
 8. Google fonts -> Add javascript links
@@ -24,3 +24,4 @@ Planned Updates:
 12. Change hot-sneaks to redmund with datepicker -> code.jquery.com/
 13. Add autocomplete to Navbar
 14. Amend and check AWS settings for S3
+15. Fix the dashboard nav showing up on pages it shouldn't
