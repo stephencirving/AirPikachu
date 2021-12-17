@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211202050852) do
+ActiveRecord::Schema.define(version: 20211217075959) do
 
   create_table "photos", force: :cascade do |t|
     t.integer  "room_id"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20211202050852) do
     t.string   "image"
     t.string   "phone_number"
     t.text     "description"
+    t.string   "pin"
+    t.boolean  "phone_verified"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
