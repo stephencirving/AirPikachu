@@ -51,7 +51,7 @@
   </div>
 </nav>
 
-<% if (user_signed_in?) && !current_page?(root_path) && !current_page?("/rooms/#{params[:id]}")%>
+<% if (user_signed_in?) && !current_page?(root_path) && (!current_page?("/rooms/#{params[:id]}") || current_page?("/rooms/") )%>
 
   <nav class="navbar navbar-default" style="background-color: #565A5C">
     <div class="container">
