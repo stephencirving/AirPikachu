@@ -35,7 +35,7 @@ class User < ApplicationRecord
   end
 
   def generate_pin
-    self.pin = SecureRand.hex(2)
+    self.pin = SecureRandom.hex(2)
     self.phone_verified = false
     save
   end
