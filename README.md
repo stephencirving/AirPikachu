@@ -25,3 +25,5 @@ Planned Updates:
 13. Add autocomplete to Navbar
 14. Amend and check AWS settings for S3
 15. Fix the dashboard nav showing up on pages it shouldn't
+16. Amend reviews -> restrict review until after checkout: your_trips -> if trip.Approved? && trip.end_date < Date.today %> your_reservations -> if reservation.Approved? && reservation.end_date < Date.today %>
+17. Set a default location for address picker or check before saving.
