@@ -46,4 +46,8 @@ Rails.application.routes.draw do
       post '/decline' => "reservations#decline"
     end
   end
+
+  resources :conversations, only: [:index, :create]  do
+    resources :messages, only: [:index, :create]
+  end
 end
