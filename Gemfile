@@ -55,3 +55,5 @@ gem 'ransack', '~> 1.7'
 
 #---- Air Kong ----
 gem 'twilio-ruby', '~> 4.11.1'
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
