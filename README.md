@@ -10,20 +10,21 @@ The aim is to create a version of airbnb which is decentralised, making it more 
 
 * sqlite ~> 1.3.13
 
-Planned Updates:
-1. Fix the google maps autocomplete
-2. Google maps API -> Configure
-3. Check the reviews section
-4. Navbar -> Fix formatting issue
-5. Upgrade photo storage to AWS -> when verified
-6. Facebook verification -> Amend
-8. Google fonts -> Add javascript links
-9. rails -> update to newest version
-10. paperclip -> change to activestorage
-11. fontawesome -> switch from link in head to gem
-12. Change hot-sneaks to redmund with datepicker -> code.jquery.com/
-13. Add autocomplete to Navbar
-14. Amend and check AWS settings for S3
-15. Fix the dashboard nav showing up on pages it shouldn't
-16. Amend reviews -> restrict review until after checkout: your_trips -> if trip.Approved? && trip.end_date < Date.today %> your_reservations -> if reservation.Approved? && reservation.end_date < Date.today %>
-17. Set a default location for address picker or check before saving.
+Planned:
+1. Google maps autocomplete -> Check.
+2. Google maps API -> Configure & optomise.
+3. Images on search + home -> same size.
+4. Navbar -> Fix formatting issue.
+5. Footer -> Add.
+6. Facebook verification -> Amend.
+8. Reviews -> Date -> restrict review until after checkout: your_trips -> if trip.Approved? && trip.end_date < Date.today %> your_reservations -> if reservation.Approved? && reservation.end_date < Date.today %>
+9. AWS S3 - > Amend and optomise.
+10. Home, search & listing pages -> sizing responsive.
+11. Address picker in listing creation - > Default location or check before saving.
+12. Datepicker -> hot-sneaks to redmund -> code.jquery.com/
+13. Navbar -> Search -> Add autocomplete.
+14. Rails -> update to newest version.
+15. Dashboard nav - set to specific pages.
+16. Google fonts -> Add javascript links.
+17. Fontawesome -> switch from link in head to gem.
+18. Paperclip -> change to activestorage.

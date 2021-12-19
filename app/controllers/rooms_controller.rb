@@ -80,7 +80,7 @@ class RoomsController < ApplicationController
 
   private
     def is_conflict(start_date, end_date, room)
-      check = room.reservations.where("? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
+      check = room.reservations.where("(? < start_date AND end_date < ?) AND status = ?", start_date, end_date, 1)
       check.size > 0? true : false
     end
 
