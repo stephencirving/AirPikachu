@@ -28,5 +28,6 @@ Planned:
 16. Google fonts -> Add javascript links.
 17. Fontawesome -> switch from link in head to gem.
 18. Paperclip -> change to activestorage.
-19. pages_controller -> if not_available.length > 0 || not_available_in_calendar.length > 0
-20. actioncable -> configurefor heroku -> 12.2 -> install gem 'redis', '~> 3.3.3
+19. pages_controller -> if not_available.length > 0 || not_available_in_calendar.length > 0 -> add section back in.
+20. actioncable -> configure for heroku -> 12.2 -> install gem 'redis', '~> 3.3.3
+21. geocomplete -> fix errors popping up regarding javascript

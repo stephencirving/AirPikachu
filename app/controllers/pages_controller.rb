@@ -41,9 +41,6 @@ class PagesController < ApplicationController
           1
         ).limit(1)
 
-        if not_available.length > 0 || not_available_in_calendar.length > 0
-  				@arrRooms.delete(room)
-  			end
       end
     end
 
