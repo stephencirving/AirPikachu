@@ -51,6 +51,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  get '/host_calendar' => "calendars#host"
+
   mount ActionCable.server => '/cable'
 
 end
