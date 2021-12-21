@@ -1,9 +1,4 @@
-App.messages = App.cable.subscriptions.create "MessagesChannel",
-  connected: ->
-    # Called when the subscription is ready for use on the server
-
-  disconnected: ->
-    # Called when the subscription has been terminated by the server
-
-  received: (data) ->
-    # Called when there's incoming data on the websocket for this channel
+  App.messages = App.cable.subscriptions.create {channel: 'MessagesChannel', id: $('#conversation_id').val() },
+    received: (data) ->
+      $('#new_message')[0].reset()
+      $('#chat').prepend data.message
