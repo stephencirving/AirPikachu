@@ -59,6 +59,17 @@
       <% if !@rooms.blank? %>
         cell.append('<span class="day-price">' + '$<%= @room.price %>' + '</span>')
       <% end %>
+    },
+    selectable: true,
+    select: function(start, end, jsEvent, view) {
+      var start_date = moment(start);
+      var end_date = moment(end).subtract(1, "days");
+
+      console.log("Start = " + start_date.format("YYY-MM-DD"));
+      console.log("End = " + end_date.format("YYY-MM-DD"));
+
+      $('#new_calendar').modal('show');
+
     }
   });
 
