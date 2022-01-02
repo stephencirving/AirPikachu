@@ -33,3 +33,4 @@ Planned:
 21. 8.1, 13.4-13.6, 14.4 [AirPikachu] -> geocomplete -> fix errors popping up regarding javascript
 22. 4.5 [AirKong] -> Make a duplicate of host calendar for guest calendar.
 23. 8.5 [AirPikachu] -> 8.1, 8.4, 13.4-13.6, 14.4 [AirPikachu] Near-by rooms -> Check settings
+24. Reservations -> remove 'review guest' or 'review host' if a review has already been made.
