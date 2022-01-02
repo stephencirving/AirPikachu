@@ -1,6 +1,6 @@
 <% if !@rooms.blank? %>
   <div class="row">
-    <%= search_form_for @search, class: 'form-group', remote: true, url: host_calendar_path do |f| %>
+    <%= search_form_for @search, class: 'form-group', url: host_calendar_path do |f| %>
       <div class="col-md-6 select">
         <div class="form-group">
           <label>Your Listings</label>
@@ -112,20 +112,6 @@
         $('#calendar_end_date').val(end_date.format("YYYY-MM-DD"));
       }
     }
-  });
-
-  $('.fc-prev-button').click(function() {
-    var current = new Date($('#start-date').val());
-    var prev = new Date(current.getFullYear(), current.getMonth() - 1, 1)
-    $('#start-date').val(moment(prev).format('YYYY-MM-DD'))
-    $('#start-date').trigger('change')
-  });
-
-  $('.fc-next-button').click(function() {
-    var current = new Date($('#start-date').val());
-    var next = new Date(current.getFullYear(), current.getMonth() + 1, 1)
-    $('#start-date').val(moment(next).format('YYYY-MM-DD'))
-    $('#start-date').trigger('change')
   });
 
 </script>
