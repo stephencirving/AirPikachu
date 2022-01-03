@@ -57,7 +57,7 @@ class UsersController < ApplicationController
       :number => params[:number],
       :exp_month => month,
       :exp_year => year,
-      :cvv => params[:cvv]
+      :cvc => params[:cvv]
     })
     customer.sources.create(source: new_token.id)
 
