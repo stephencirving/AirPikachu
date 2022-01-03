@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   end
 
   get '/host_calendar' => "calendars#host"
+  get '/payment_method' => 'users#payment'
+  post '/add_card' => 'users#add_card'
 
   mount ActionCable.server => '/cable'
 
