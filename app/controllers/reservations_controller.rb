@@ -7,6 +7,10 @@ class ReservationsController < ApplicationController
 
     if current_user == room.user
       flash[:alert] = "You cannot book your own property!"
+    elsif current_user.stripe_id.blank?
+      flash[:alert] = "Update your payment method."
+      return redirect_to payment_method_path
+
     else
       start_date = Date.parse(reservation_params[:start_date])
       end_date = Date.parse(reservation_params[:end_date])
@@ -18,12 +22,11 @@ class ReservationsController < ApplicationController
       @reservation.total = room.price * days
       #@reservation.save
 
-      if @reservation.save
+      if @reservation.Waiting!
         if room.Request?
           flash[:notice] = "Request sent successfully!"
       else
-        @reservation.Approved!
-        flash[:notice] = "Reservation created successfully!"
+        charge(room, @reservation)
       end
     else
       flash[:alert] = "Cannot make a reservation"
@@ -42,7 +45,7 @@ class ReservationsController < ApplicationController
   end
 
   def approve
-    @reservation.Approved!
+    charge(@reservation.room, @reservation)
     redirect_to your_reservations_path
   end
 
@@ -52,6 +55,29 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+    def charge(room, reservation)
+      if !reservation.user.stripe_id.blank?
+        customer = Stripe::Customer.retrieve(reservation.user.stripe_id)
+        charge = Stripe::Charge.create(
+          :customer => customer.id,
+          :amount => reservation.total * 100,
+          :description => room.listing_name,
+          :currency => "usd"
+        )
+
+      if charge
+        reservation.Approved!
+        flash[:notice] = "Reservation created successfully!"
+      else
+        reservation.Declined!
+        flash[:alert] = "Cannot charge with this payment method!"
+      end
+    end
+    rescue Stripe::CardError => e
+      reservation.Declined!
+      flash[:alert] = e.message
+    end
 
     def set_reservation
       @reservation = Reservation.find(params[:id])
