@@ -56,7 +56,6 @@ class UsersController < ApplicationController
       customer.save
     end
 
-
     flash[:notice] = "Your card is saved."
     redirect_to payment_method_path
   rescue Stripe::CardError => e
