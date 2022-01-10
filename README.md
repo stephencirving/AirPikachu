@@ -35,3 +35,4 @@ Planned:
 23. 8.5 [AirPikachu] -> 8.1, 8.4, 13.4-13.6, 14.4 [AirPikachu] Near-by rooms -> Check settings
 24. Reservations -> remove 'review guest' or 'review host' if a review has already been made.
 25. 8.5 [AirKong] -> Dashboard -> Card Added -> Amend button
+26. 2.3, 3.4 [AirPikachu] -> header -> Fix spacing
