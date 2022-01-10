@@ -13,6 +13,11 @@
         <div class="container text-center">
           <% if current_user.merchant_id.blank? %>
               <%= link_to image_tag('stripe_button.png'), stripe_express_path %>
+          <% else %>
+              <br/>
+              <div class="text-center">
+                <%= link_to "Express Dashboard", @login_link.url, class: "btn btn-normal" %>
+              </div>
           <% end %>
         </div>
       </div>
