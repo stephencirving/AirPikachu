@@ -6,6 +6,8 @@ class RevenuesController < ApplicationController
 
     @this_week_revenue = @reservations.map {|r| {r.updated_at.strftime("%Y-%m-%d") => r.total} }
                                       .inject({}) {|a,b| a.merge(b){|_,x,y| x + y}}
-    DEBUG
+    @this_week_revenue = Date.today().all_week.map{ |date| [date.strftime("%a"), @this_week_revenue[date.strftime("%Y-%m-%d")] || 0 ] }
+
   end
+
 end
