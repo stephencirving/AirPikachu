@@ -450,7 +450,7 @@ a {
   border-color: #F99A52;
 }
 
-#add-card button {
+.add-card button {
   float: left;
   display: block;
   background-image: linear-gradient(-180deg, #F8B563 0%, #F99A52 100%);
@@ -467,11 +467,11 @@ a {
   outline: none;
 }
 
-#add-card button:focus {
+.add-card button:focus {
   background: #EF8C41;
 }
 
-#add-card button:active {
+.add-card button:active {
   background: #E17422;
 }
 
