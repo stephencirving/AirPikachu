@@ -36,3 +36,7 @@ Planned:
 24. Reservations -> remove 'review guest' or 'review host' if a review has already been made.
 25. 8.5 [AirKong] -> Dashboard -> Card Added -> Amend button
 26. 2.3, 3.4 [AirPikachu] -> header -> Fix spacing
+27. Calendar -> fix error when you try to access calendar and no calendar exists.
+28. Add a 'resend confirmation email' button.
+29. 'resend password' gives error.
+30. Map - Remove error when there's no listings in that area.
