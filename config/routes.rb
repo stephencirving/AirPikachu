@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   end
 
   resources :revenues, only: [:index]
-  
+
   resources :conversations, only: [:index, :create]  do
     resources :messages, only: [:index, :create]
   end
@@ -58,6 +58,8 @@ Rails.application.routes.draw do
   get '/payment_method' => "users#payment"
   get '/payout_method' => "users#payout"
   post '/add_card' => "users#add_card"
+
+  get '/notifications' => 'notifications#index'
 
   mount ActionCable.server => '/cable'
 
