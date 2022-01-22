@@ -37,7 +37,7 @@ Planned:
 25. 8.5 [AirKong] -> Dashboard -> Card Added -> Amend button
 26. 2.3, 3.4 [AirPikachu] -> header -> Fix spacing
 27. Calendar -> fix error when you try to access calendar and no calendar exists.
-28. Add a 'resend confirmation email' button.
+28. 2.2 [AirPikachu]Add a 'resend confirmation email' button.
 29. 'resend password' gives error.
-30. Map - Remove error when there's no listings in that area.
-31. The ID in app needs to be protected for messages/notifications
+30.  8.1, 13.4-13.6, 14.4 [AirPikachu] Map - Remove error when there's no listings in that area.
+31. 13.4 [AirKong] The ID in app needs to be protected for messages/notifications
