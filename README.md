@@ -40,3 +40,4 @@ Planned:
 28. Add a 'resend confirmation email' button.
 29. 'resend password' gives error.
 30. Map - Remove error when there's no listings in that area.
+31. The ID in app needs to be protected for messages/notifications
