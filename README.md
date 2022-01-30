@@ -41,3 +41,4 @@ Planned:
 29. 'resend password' gives error.
 30.  8.1, 13.4-13.6, 14.4 [AirPikachu] Map - Remove error when there's no listings in that area.
 31. 13.4 [AirKong] The ID in app needs to be protected for messages/notifications
+32. 3.4, 3.5 [AirPikachu], 9.3 [AirKong] -> Email -> Change gmail to mailgun or amend gmail
