@@ -90,8 +90,8 @@
 
       if charge
         reservation.Approved!
-        ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later
-        send_sms(room, reservation)
+        ReservationMailer.send_email_to_guest(reservation.user, room).deliver_later if reservation.user.setting.enable_email
+        send_sms(room, reservation) if room.user.setting.enable_sms
         flash[:notice] = "Reservation created successfully!"
       else
         reservation.Declined!
